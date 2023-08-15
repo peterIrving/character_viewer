@@ -10,8 +10,8 @@ class CharacterDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Character Detail Page")),
-      body: CharacterDetailView(),
+      appBar: AppBar(title: const Text("Character Detail Page")),
+      body: const CharacterDetailView(),
     );
   }
 }

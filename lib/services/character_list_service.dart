@@ -1,13 +1,26 @@
 import 'dart:convert';
 
+import 'package:characters_coding_test/data/app_config.dart';
 import 'package:characters_coding_test/data/character_entity.dart';
-import 'package:characters_coding_test/data/models.dart';
-import 'package:characters_coding_test/my_app.dart';
-import 'package:http/http.dart' as http;
+import 'package:characters_coding_test/data/response_models/search_result.dart';
+import 'package:http/http.dart';
 
-class CharacterListService {
+abstract class CharacterListService {
+  CharacterListService(this.client);
+  final Client client;
+
+  Future<List<CharacterEntity>> getCharacters(AppConfig config);
+}
+
+class CharacterListServiceImpl implements CharacterListService {
+  CharacterListServiceImpl(this.client);
+
+  @override
+  final Client client;
+
+  @override
   Future<List<CharacterEntity>> getCharacters(AppConfig config) async {
-    final response = await http.get(config.apiURL);
+    final response = await client.get(config.apiURL);
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body);
 

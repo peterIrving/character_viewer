@@ -1,6 +1,6 @@
+import 'package:characters_coding_test/data/app_config.dart';
 import 'package:characters_coding_test/data/character_entity.dart';
 import 'package:characters_coding_test/data/api_status.dart';
-import 'package:characters_coding_test/my_app.dart';
 import 'package:equatable/equatable.dart';
 
 class CharacterListState extends Equatable {

@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryMed">85.7&nbsp;%</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">6</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2023-08-13 18:45:43</td>
+            <td class="headerValue">2023-08-14 19:01:03</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -61,27 +61,28 @@
 <pre class="sourceHeading">            Line data    Source code</pre>
 <pre class="source">
 <span id="L1"><span class="lineNum">       1</span>              : import 'package:characters_coding_test/data/character_entity.dart';</span>
-<span id="L2"><span class="lineNum">       2</span>              : import 'package:characters_coding_test/my_app.dart';</span>
+<span id="L2"><span class="lineNum">       2</span>              : import 'package:equatable/equatable.dart';</span>
 <span id="L3"><span class="lineNum">       3</span>              : </span>
-<span id="L4"><span class="lineNum">       4</span>              : class CharacterDetailState {</span>
-<span id="L5"><span class="lineNum">       5</span> <span class="tlaUNC tlaBgUNC">           0 :   CharacterDetailState({</span></span>
-<span id="L6"><span class="lineNum">       6</span>              :     required this.variant,</span>
-<span id="L7"><span class="lineNum">       7</span>              :     this.characterEntity,</span>
-<span id="L8"><span class="lineNum">       8</span>              :   });</span>
-<span id="L9"><span class="lineNum">       9</span>              : </span>
-<span id="L10"><span class="lineNum">      10</span>              :   final Variant variant;</span>
-<span id="L11"><span class="lineNum">      11</span>              : </span>
-<span id="L12"><span class="lineNum">      12</span>              :   final CharacterEntity? characterEntity;</span>
-<span id="L13"><span class="lineNum">      13</span>              : </span>
-<span id="L14"><span class="lineNum">      14</span> <span class="tlaUNC">           0 :   CharacterDetailState copyWith({</span></span>
-<span id="L15"><span class="lineNum">      15</span>              :     CharacterEntity? characterEntity,</span>
-<span id="L16"><span class="lineNum">      16</span>              :   }) {</span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaUNC">           0 :     return CharacterDetailState(</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaUNC">           0 :       variant: variant,</span></span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaUNC">           0 :       characterEntity: characterEntity ?? this.characterEntity,</span></span>
-<span id="L20"><span class="lineNum">      20</span>              :     );</span>
-<span id="L21"><span class="lineNum">      21</span>              :   }</span>
-<span id="L22"><span class="lineNum">      22</span>              : }</span>
+<span id="L4"><span class="lineNum">       4</span>              : class CharacterDetailState extends Equatable {</span>
+<span id="L5"><span class="lineNum">       5</span> <span class="tlaGNC tlaBgGNC">           5 :   const CharacterDetailState({</span></span>
+<span id="L6"><span class="lineNum">       6</span>              :     this.characterEntity,</span>
+<span id="L7"><span class="lineNum">       7</span>              :   });</span>
+<span id="L8"><span class="lineNum">       8</span>              : </span>
+<span id="L9"><span class="lineNum">       9</span>              :   final CharacterEntity? characterEntity;</span>
+<span id="L10"><span class="lineNum">      10</span>              : </span>
+<span id="L11"><span class="lineNum">      11</span> <span class="tlaGNC">           1 :   CharacterDetailState copyWith({</span></span>
+<span id="L12"><span class="lineNum">      12</span>              :     CharacterEntity? characterEntity,</span>
+<span id="L13"><span class="lineNum">      13</span>              :   }) {</span>
+<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">           1 :     return CharacterDetailState(</span></span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaUNC tlaBgUNC">           0 :       characterEntity: characterEntity ?? this.characterEntity,</span></span>
+<span id="L16"><span class="lineNum">      16</span>              :     );</span>
+<span id="L17"><span class="lineNum">      17</span>              :   }</span>
+<span id="L18"><span class="lineNum">      18</span>              : </span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC tlaBgGNC">           1 :   @override</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">           1 :   List&lt;Object?&gt; get props =&gt; [</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">           1 :         characterEntity,</span></span>
+<span id="L22"><span class="lineNum">      22</span>              :       ];</span>
+<span id="L23"><span class="lineNum">      23</span>              : }</span>
         </pre>
               </td>
             </tr>

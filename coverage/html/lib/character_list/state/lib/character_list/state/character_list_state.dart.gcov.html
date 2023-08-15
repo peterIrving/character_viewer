@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
             <td class="headerCovTableEntry">29</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">29</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2023-08-13 18:45:43</td>
+            <td class="headerValue">2023-08-14 19:01:03</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -60,69 +60,69 @@
               <td>
 <pre class="sourceHeading">            Line data    Source code</pre>
 <pre class="source">
-<span id="L1"><span class="lineNum">       1</span>              : import 'package:characters_coding_test/data/character_entity.dart';</span>
-<span id="L2"><span class="lineNum">       2</span>              : import 'package:characters_coding_test/data/api_status.dart';</span>
-<span id="L3"><span class="lineNum">       3</span>              : import 'package:characters_coding_test/my_app.dart';</span>
+<span id="L1"><span class="lineNum">       1</span>              : import 'package:characters_coding_test/data/app_config.dart';</span>
+<span id="L2"><span class="lineNum">       2</span>              : import 'package:characters_coding_test/data/character_entity.dart';</span>
+<span id="L3"><span class="lineNum">       3</span>              : import 'package:characters_coding_test/data/api_status.dart';</span>
 <span id="L4"><span class="lineNum">       4</span>              : import 'package:equatable/equatable.dart';</span>
 <span id="L5"><span class="lineNum">       5</span>              : </span>
 <span id="L6"><span class="lineNum">       6</span>              : class CharacterListState extends Equatable {</span>
-<span id="L7"><span class="lineNum">       7</span> <span class="tlaUNC tlaBgUNC">           0 :   const CharacterListState({</span></span>
-<span id="L8"><span class="lineNum">       8</span>              :     required this.variant,</span>
+<span id="L7"><span class="lineNum">       7</span> <span class="tlaGNC tlaBgGNC">           1 :   const CharacterListState({</span></span>
+<span id="L8"><span class="lineNum">       8</span>              :     required this.config,</span>
 <span id="L9"><span class="lineNum">       9</span>              :     this.status = APIStatus.idle,</span>
 <span id="L10"><span class="lineNum">      10</span>              :     this.searchString = '',</span>
 <span id="L11"><span class="lineNum">      11</span>              :     this.errorMessage,</span>
 <span id="L12"><span class="lineNum">      12</span>              :     List&lt;CharacterEntity&gt;? data,</span>
 <span id="L13"><span class="lineNum">      13</span>              :   }) : _data = data;</span>
 <span id="L14"><span class="lineNum">      14</span>              : </span>
-<span id="L15"><span class="lineNum">      15</span>              :   final Variant variant;</span>
+<span id="L15"><span class="lineNum">      15</span>              :   final AppConfig config;</span>
 <span id="L16"><span class="lineNum">      16</span>              :   final APIStatus status;</span>
 <span id="L17"><span class="lineNum">      17</span>              : </span>
 <span id="L18"><span class="lineNum">      18</span>              :   final String searchString;</span>
 <span id="L19"><span class="lineNum">      19</span>              :   final String? errorMessage;</span>
 <span id="L20"><span class="lineNum">      20</span>              :   final List&lt;CharacterEntity&gt;? _data;</span>
 <span id="L21"><span class="lineNum">      21</span>              : </span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaUNC">           0 :   List&lt;CharacterEntity&gt;? get characters {</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaUNC">           0 :     if (_data != null) {</span></span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaUNC">           0 :       if (searchString.isNotEmpty) {</span></span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaUNC">           0 :         return _data!</span></span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaUNC">           0 :             .where((element) =&gt;</span></span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaUNC">           0 :                 element.name</span></span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaUNC">           0 :                     .toLowerCase()</span></span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaUNC">           0 :                     .contains(searchString.toLowerCase()) ||</span></span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaUNC">           0 :                 element.description</span></span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaUNC">           0 :                     .toLowerCase()</span></span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaUNC">           0 :                     .contains(searchString.toLowerCase()))</span></span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaUNC">           0 :             .toList();</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">           1 :   List&lt;CharacterEntity&gt;? get characters {</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">           1 :     if (_data != null) {</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">           2 :       if (searchString.isNotEmpty) {</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">           1 :         return _data!</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">           2 :             .where((element) =&gt;</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           1 :                 element.name</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           1 :                     .toLowerCase()</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">           3 :                     .contains(searchString.toLowerCase()) ||</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">           1 :                 element.description</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           1 :                     .toLowerCase()</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">           3 :                     .contains(searchString.toLowerCase()))</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           1 :             .toList();</span></span>
 <span id="L34"><span class="lineNum">      34</span>              :       }</span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaUNC">           0 :       return _data;</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">           1 :       return _data;</span></span>
 <span id="L36"><span class="lineNum">      36</span>              :     }</span>
 <span id="L37"><span class="lineNum">      37</span>              :     return null;</span>
 <span id="L38"><span class="lineNum">      38</span>              :   }</span>
 <span id="L39"><span class="lineNum">      39</span>              : </span>
-<span id="L40"><span class="lineNum">      40</span> <span class="tlaUNC">           0 :   String get title =&gt; &quot;Characters from the ${variant.title}&quot;;</span></span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">           4 :   String get title =&gt; &quot;Characters from the ${config.title}&quot;;</span></span>
 <span id="L41"><span class="lineNum">      41</span>              : </span>
-<span id="L42"><span class="lineNum">      42</span> <span class="tlaUNC">           0 :   CharacterListState copyWith({</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">           1 :   CharacterListState copyWith({</span></span>
 <span id="L43"><span class="lineNum">      43</span>              :     APIStatus? status,</span>
 <span id="L44"><span class="lineNum">      44</span>              :     String? searchString,</span>
 <span id="L45"><span class="lineNum">      45</span>              :     String? errorMessage,</span>
 <span id="L46"><span class="lineNum">      46</span>              :     List&lt;CharacterEntity&gt;? data,</span>
 <span id="L47"><span class="lineNum">      47</span>              :   }) {</span>
-<span id="L48"><span class="lineNum">      48</span> <span class="tlaUNC">           0 :     return CharacterListState(</span></span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaUNC">           0 :       variant: variant,</span></span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaUNC">           0 :       status: status ?? this.status,</span></span>
-<span id="L51"><span class="lineNum">      51</span> <span class="tlaUNC">           0 :       searchString: searchString ?? this.searchString,</span></span>
-<span id="L52"><span class="lineNum">      52</span> <span class="tlaUNC">           0 :       errorMessage: errorMessage ?? this.errorMessage,</span></span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaUNC">           0 :       data: data ?? _data,</span></span>
+<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">           1 :     return CharacterListState(</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">           1 :       config: config,</span></span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">           1 :       status: status ?? this.status,</span></span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">           1 :       searchString: searchString ?? this.searchString,</span></span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">           1 :       errorMessage: errorMessage ?? this.errorMessage,</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">           1 :       data: data ?? _data,</span></span>
 <span id="L54"><span class="lineNum">      54</span>              :     );</span>
 <span id="L55"><span class="lineNum">      55</span>              :   }</span>
 <span id="L56"><span class="lineNum">      56</span>              : </span>
-<span id="L57"><span class="lineNum">      57</span> <span class="tlaUNC">           0 :   @override</span></span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaUNC">           0 :   List&lt;Object?&gt; get props =&gt; [</span></span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaUNC">           0 :         variant,</span></span>
-<span id="L60"><span class="lineNum">      60</span> <span class="tlaUNC">           0 :         status,</span></span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaUNC">           0 :         searchString,</span></span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaUNC">           0 :         errorMessage,</span></span>
-<span id="L63"><span class="lineNum">      63</span> <span class="tlaUNC">           0 :         _data,</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">           1 :   @override</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">           1 :   List&lt;Object?&gt; get props =&gt; [</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">           1 :         config,</span></span>
+<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">           1 :         status,</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">           1 :         searchString,</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           1 :         errorMessage,</span></span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">           1 :         _data,</span></span>
 <span id="L64"><span class="lineNum">      64</span>              :       ];</span>
 <span id="L65"><span class="lineNum">      65</span>              : }</span>
         </pre>

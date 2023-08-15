@@ -1,21 +1,13 @@
-import 'dart:developer';
-
 import 'package:characters_coding_test/character_detail/state/character_detail_cubit.dart';
 import 'package:characters_coding_test/character_detail/state/character_detail_state.dart';
 import 'package:characters_coding_test/character_list/state/character_list_cubit.dart';
 import 'package:characters_coding_test/character_list/state/character_list_state.dart';
 import 'package:characters_coding_test/character_list/ui/character_list_page.dart';
+import 'package:characters_coding_test/data/app_config.dart';
 import 'package:characters_coding_test/services/character_list_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-class AppConfig {
-  final String title;
-
-  final Uri apiURL;
-
-  AppConfig(this.title, this.apiURL);
-}
+import 'package:http/http.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({
@@ -27,7 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final service = CharacterListService();
+    final service = CharacterListServiceImpl(Client());
 
     return MultiBlocProvider(
       providers: [
@@ -39,7 +31,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => CharacterDetailCubit(
-            CharacterDetailState(),
+            const CharacterDetailState(),
           ),
         ),
       ],
@@ -49,7 +41,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: CharacterListPage(),
+        home: const CharacterListPage(),
       ),
     );
   }

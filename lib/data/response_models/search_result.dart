@@ -1,3 +1,5 @@
+import 'package:characters_coding_test/data/response_models/character_response.dart';
+
 class SearchResult {
   String? abstract;
   String? abstractSource;
@@ -64,49 +66,6 @@ class SearchResult {
               : CharacterResponse.fromJson(i as Map<String, dynamic>))
           .whereType<CharacterResponse>()
           .toList(),
-    );
-  }
-}
-
-class CharacterResponse {
-  String? firstURL;
-  Icon? icon;
-  String? result;
-  String? text;
-
-  CharacterResponse({
-    required this.firstURL,
-    required this.icon,
-    required this.result,
-    required this.text,
-  });
-
-  factory CharacterResponse.fromJson(Map<String, dynamic> json) {
-    return CharacterResponse(
-      firstURL: json['FirstURL'],
-      icon: json['Icon'] == null ? null : Icon.fromJson(json['Icon']),
-      result: json['Result'],
-      text: json['Text'],
-    );
-  }
-}
-
-class Icon {
-  String? height;
-  String? url;
-  String? width;
-
-  Icon({
-    required this.height,
-    required this.url,
-    required this.width,
-  });
-
-  factory Icon.fromJson(Map<String, dynamic> json) {
-    return Icon(
-      height: json['Height'],
-      url: json['URL'],
-      width: json['Width'],
     );
   }
 }

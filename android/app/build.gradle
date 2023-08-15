@@ -67,10 +67,12 @@ android {
         simpsons {
             dimension "app"
             applicationId "com.sample.simpsonsviewer"
+            resValue "string", "app_name", "Simpsons Viewer"
         }
-        wire {
+        thewire {
             dimension "app"
             applicationId "com.sample.wireviewer"
+            resValue "string", "app_name", "The Wire Viewer"
         }
     }
 }

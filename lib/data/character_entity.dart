@@ -1,8 +1,9 @@
-import 'package:characters_coding_test/data/models.dart';
+import 'package:characters_coding_test/data/response_models/character_response.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
 @immutable
-class CharacterEntity {
+class CharacterEntity extends Equatable {
   final String name;
   final String description;
   final String? imageSrc;
@@ -27,4 +28,11 @@ class CharacterEntity {
       imageSrc: imageSrc,
     );
   }
+
+  @override
+  List<Object?> get props => [
+        name,
+        description,
+        imageSrc,
+      ];
 }

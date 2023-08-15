@@ -11,7 +11,7 @@ class CharacterListCubit extends Cubit<CharacterListState> {
   }) : super(initialState);
 
   final CharacterListService service;
-  void load() async {
+  Future<void> load() async {
     emit(state.copyWith(status: APIStatus.loading));
     try {
       final results = await service.getCharacters(state.config);
