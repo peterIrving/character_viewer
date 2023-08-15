@@ -1,7 +1,6 @@
 import 'package:characters_coding_test/data/character_entity.dart';
 import 'package:characters_coding_test/data/response_models/character_image.dart';
 import 'package:characters_coding_test/data/response_models/character_response.dart';
-import 'package:characters_coding_test/data/response_models/search_result.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 main() {

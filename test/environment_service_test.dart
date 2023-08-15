@@ -1,4 +1,3 @@
-import 'package:characters_coding_test/data/app_config.dart';
 import 'package:characters_coding_test/services/environment_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
@@ -32,8 +31,6 @@ main() {
       () async {
     when(() => mockDotEnv.load(fileName: any(named: "fileName")))
         .thenThrow(Exception('error'));
-
-    // when(() => mockDotEnv.env).thenReturn({});
 
     final environmentService = EnvironmentService(
       flavor: 'testFlavor',

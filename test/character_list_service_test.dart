@@ -1,6 +1,5 @@
 import 'package:characters_coding_test/data/app_config.dart';
 import 'package:characters_coding_test/data/character_entity.dart';
-import 'package:characters_coding_test/my_app.dart';
 import 'package:characters_coding_test/services/character_list_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
