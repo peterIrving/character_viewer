@@ -1,16 +1,23 @@
 # characters_coding_test
 
-A new Flutter project.
+## Running different environments
 
-## Getting Started
+To run The Wire character viewer, use command:
 
-This project is a starting point for a Flutter application.
+flutter run --flavor thewire --dart-define=FLAVOR=thewire
 
-A few resources to get you started if this is your first Flutter project:
+To run the Simpsons character viewer, use command: 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+flutter run --flavor simpsons --dart-define=FLAVOR=simpsons
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### reasoning for the two flavor argument
+
+the `--flavor` argument helps specify on the native layer what the bundle id/package name will be. 
+
+the `--dart-define=Flavor=` argument helps specify which environment file is to be referenced within the flutter codebase
+
+.env.simpsons and .env.thewire files contain the display title of the app as well as the API url. Normally, its not recommended to commit these to source control, but I added them to make testing this sample project easier. 
+
+### Bootstrapped Code
+
+I did not use any code from sample projects, but I did use Chat GPT to generate my API response classes as well as some test code. 
